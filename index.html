@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- modifed from example.com -->
+<html>
+<head>
+    <title>Proof of Work | Balsn CTF 2019</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #000000;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color:#f8f9fa;
+    }
+    div {
+        width: 800px;
+        margin: 5em auto;
+        border:2px dotted #ffffff;
+        padding: 50px;
+        background-color: #000000;
+        border-radius: 1em;
+    }
+    h1 {
+      font-size: 36px;
+      color:#fbfbfc;
+    }
+    p, li {
+      font-size: 22px;
+    }
+    a:link, a:visited{
+      color:#e0e0e0;
+      text-decoration: none;
+    }
+    a:hover {
+      color:#ffffff;
+      text-decoration: underline;
+    }
+    li {
+      height: 28px;
+      padding-left: 1em;
+    }
+    li:before {
+      content: "∕ ";
+    }
+    ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 16px;
+    }
+    code {
+      font-size: 16px;
+      color: #50f050;
+    }
+    </style>    
+</head>
+
+<body>
+<div>
+    <h1>Proof of Work</h1>
+    <p>The challenger will receive a prefix and number n representing difficulty. He has to compute an answer such that `sha256(prefix + answer)` has n leading zero bits.</p>
+    <p>We support various languages to help you solve the obnoxious PoW.</p>
+    <code>Example: python3 ./python3.py foobar_prefix 16</code>
+    <ul>
+      <li><a href="./solver/js.html">Compute PoW in the browser</a></li>
+      <li><a href="./solver/python3.py" download>Python 3</a></li>
+      <li><a href="./solver/python2.py" download>Python 2.7</a></li>
+      <li><a href="./solver/ruby.rb" download>Ruby</a></li>
+      <li><a href="./solver/nodejs.js" download>Node.js</a></li>
+      <li><a href="./solver/go.go" download>Go</a></li>
+    </ul>
+</div>
+</body>
+</html>

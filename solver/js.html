@@ -1,0 +1,36 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.min.js" integrity="sha256-nIoG9XIePM1QNttI6KAGLYGNxc4DNinxxmOZW0/Z7uA=" crossorigin="anonymous"></script>
+<script>
+var pow = (prefix, difficulty) => {
+  let zeros = '0'.repeat(difficulty);
+  let isValid = (hexdigest) => {
+    let bin = '';
+    for (let c of hexdigest)
+      bin += parseInt(c, 16).toString(2).padStart(4, '0');
+    return bin.startsWith(zeros);
+  }
+  let i = 0;
+  while (true) {
+    let hexdigest = sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(prefix + i.toString()));
+    if (isValid(hexdigest))
+      return i;
+    i++;
+  }
+};
+
+var run = () => {
+  let prefix = document.getElementById('prefix').value;
+  let difficulty = parseInt(document.getElementById('difficulty').value);
+  let answer = pow(prefix, difficulty);
+  document.getElementById('answer').innerHTML = answer;
+  if (document.getElementById("alert").checked)
+    alert(answer);
+};
+</script>
+
+<body>
+  Prefix: <input id="prefix" type="text"> 
+  Difficulty: <input id="difficulty" type="number" >
+  Alert: <input id="alert" type="checkbox">
+  <input type="submit" value="Submit" onClick="run()"> <br/>
+  <h3 id="answer">[ready]</h3>
+</body>
