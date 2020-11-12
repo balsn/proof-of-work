@@ -17,3 +17,7 @@ We support various languages to help you solve the obnoxious PoW.
 - [ ] Rust
 - [ ] C/C++
 - [ ] Java
+
+## Modules
+
+- `powser.py`: A IP-based PoW server module implemented in Python 3.8.
