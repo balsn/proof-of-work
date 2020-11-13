@@ -20,4 +20,5 @@ We support various languages to help you solve the obnoxious PoW.
 
 ## Modules
 
-- `powser.py`: A IP-based PoW server module implemented in Python 3.8.
+- `powser.py`: A IP-based PoW server module implemented in Python 3.8. Suitable for web challenges.
+- `nc_powser.py`: A simple PoW server module implemented in Python 3.8. Suitable for nc-based challenges.
